@@ -6,8 +6,6 @@ const nextConfig: NextConfig = {
     contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
-  output: "standalone",
-  assetPrefix: "./",
 };
 
 export default nextConfig;
