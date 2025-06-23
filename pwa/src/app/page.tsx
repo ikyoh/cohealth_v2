@@ -1,7 +1,6 @@
 import { Separator } from "@/components/ui/separator";
 import Footer from "@/components/website/Footer";
 import Header from "@/components/website/Header";
-import HeroSection from "@/components/website/HeroSection";
 import SectionContact from "@/components/website/SectionContact";
 import SectionSoftware from "@/components/website/SectionSofware";
 import { easeInOut } from "framer-motion";
@@ -27,7 +26,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <HeroSection />
+
       <main className="container mx-auto px-4 py-8">
         <section id="patients" className="py-16">
           <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
