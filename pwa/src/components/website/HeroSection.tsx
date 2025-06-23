@@ -41,7 +41,7 @@ export default function HeroSection() {
                         <div className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--color-background)_75%)]"></div>
                         <div className="mx-auto max-w-7xl px-6">
                             <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
-                                <AnimatedGroup variants={transitionVariants}>
+                                <AnimatedGroup>
                                     <Link
                                         href="#sofware"
                                         className="hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950">
@@ -70,7 +70,7 @@ export default function HeroSection() {
                                     Coordination des soins à domicile
                                 </TextEffect>
 
-                                <AnimatedGroup variants={transitionVariants}>
+                                <AnimatedGroup>
                                     <div className="flex items-center justify-center gap-10 mt-6">
                                         <div className="flex items-center gap-1 text-secondary font-bold p-3 border rounded-md">
                                             <Heart />
@@ -96,17 +96,6 @@ export default function HeroSection() {
                                 </TextEffect>
 
                                 <AnimatedGroup
-                                    variants={{
-                                        container: {
-                                            visible: {
-                                                transition: {
-                                                    staggerChildren: 0.05,
-                                                    delayChildren: 0.75,
-                                                },
-                                            },
-                                        },
-                                        ...transitionVariants,
-                                    }}
                                     className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row">
                                     <div
                                         key={1}
@@ -123,18 +112,7 @@ export default function HeroSection() {
                                 </AnimatedGroup>
                             </div>
                         </div>
-                        <AnimatedGroup
-                            variants={{
-                                container: {
-                                    visible: {
-                                        transition: {
-                                            staggerChildren: 0.05,
-                                            delayChildren: 0.75,
-                                        },
-                                    },
-                                },
-                                ...transitionVariants,
-                            }}>
+                        <AnimatedGroup>
                             <div className="relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
                                 <div
                                     aria-hidden
