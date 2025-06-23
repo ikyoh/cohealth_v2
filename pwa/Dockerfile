@@ -54,8 +54,10 @@ WORKDIR /srv/app
 ENV NODE_ENV production
 ENV NEXT_TELEMETRY_DISABLED 1
 
+# ...existing code...
 RUN addgroup --gid 1001 nodejs && \
-	adduser --uid 1001 nextjs
+	adduser --uid 1001 --gid 1001 --disabled-password --gecos "" nextjs
+# ...existing code...
 
 COPY --from=builder --link /srv/app/public ./public
 
