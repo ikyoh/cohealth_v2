@@ -3,24 +3,12 @@ import Footer from "@/components/website/Footer";
 import Header from "@/components/website/Header";
 import SectionContact from "@/components/website/SectionContact";
 import SectionSoftware from "@/components/website/SectionSofware";
-import { easeInOut } from "framer-motion";
+
 import { ArrowRight, Cpu, Frame, MessagesSquare, NotepadText } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const motionProps = {
-  initial: { opacity: 0, y: 100, filter: 'blur(30px)' },
-  whileInView: { opacity: 1, y: 0, filter: 'blur(0px)' },
-  transition: { ease: easeInOut, duration: 0.5 },
-  viewport: { margin: "1000px 0px -200px 0px", once: false },
-}
 
-const motionImageProps = {
-  initial: { opacity: 0.7, scale: 0.4 },
-  whileInView: { opacity: 1, scale: 1 },
-  transition: { ease: easeInOut, duration: 0.5 },
-  viewport: { margin: "1000px 0px -100px 0px", once: false },
-}
 
 export default function Home() {
   return (
@@ -122,7 +110,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="relative mt-6 sm:mt-0 perspective-midrange">
-                <div {...motionImageProps}>
+                <div>
                   <div className="relative mt-6 sm:mt-0 perspective-midrange">
                     <div className="-rotate-y-15 aspect-67/34 relative rounded-2xl border p-2">
                       <div className="absolute grid grid-cols-3 grid-rows-3 top-0 left-0 z-10 p-6 gap-6 h-full w-full">
@@ -149,7 +137,7 @@ export default function Home() {
             </div>
             <div className="grid gap-6 sm:grid-cols-2 md:gap-12 lg:gap-24">
               <div className="relative mt-6 sm:mt-0 perspective-midrange">
-                <div {...motionImageProps}>
+                <div>
                   <div className="relative mt-6 sm:mt-0 perspective-midrange">
                     <div className="rotate-y-15 aspect-67/34 relative rounded-2xl border p-2">
                       <div className="absolute grid grid-cols-3 grid-rows-3 top-0 left-0 z-10 p-6 gap-6 h-full w-full">
@@ -284,7 +272,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="relative mt-6 sm:mt-0 perspective-midrange">
-                <div {...motionImageProps}>
+                <div>
                   <div className="relative mt-6 sm:mt-0 perspective-midrange">
                     <div className="-rotate-y-15 aspect-67/34 relative rounded-2xl border p-2">
                       <div className="absolute grid grid-cols-3 grid-rows-3 top-0 left-0 z-10 p-6 gap-6 h-full w-full">
@@ -311,7 +299,7 @@ export default function Home() {
               </h3>
             </div>
             <div className="grid gap-6 sm:grid-cols-2 md:gap-12 lg:gap-24">
-              <div {...motionImageProps}>
+              <div>
                 <div className="relative mt-6 sm:mt-0 perspective-midrange">
                   <div className="rotate-y-15 aspect-67/34 relative rounded-2xl border p-2">
                     <div className="absolute grid grid-cols-3 grid-rows-3 top-0 left-0 z-10 p-6 gap-6 h-full w-full">
