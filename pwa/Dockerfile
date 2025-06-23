@@ -9,11 +9,21 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /srv/app
 
 # Install dependencies based on the preferred package manager
-COPY package.json ./
+COPY package.json  ./
 RUN npm ci;
 
+# Development image
+FROM base AS dev
+
+EXPOSE 3000
+ENV PORT 3000
+ENV HOSTNAME localhost
+
+CMD ["sh", "-c", "npm install; npm run dev"]
+
+
 # Rebuild the source code only when needed
-FROM node_upstream AS builder
+FROM base AS builder
 WORKDIR /srv/app
 COPY --from=base /srv/app/node_modules ./node_modules
 COPY . .
@@ -23,7 +33,12 @@ COPY . .
 # Uncomment the following line in case you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED=1
 
-RUN corepack enable pnpm && pnpm run build;
+RUN \
+	if [ -f yarn.lock ]; then yarn run build; \
+	elif [ -f package-lock.json ]; then npm run build; \
+	elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm run build; \
+	else echo "Lockfile not found." && exit 1; \
+	fi
 
 # Production image, copy all the files and run next
 FROM node_upstream AS prod
