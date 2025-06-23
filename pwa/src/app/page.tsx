@@ -8,19 +8,19 @@ import { ArrowRight, Cpu, Frame, MessagesSquare, NotepadText } from 'lucide-reac
 import * as motion from "motion/react-client";
 import Image from 'next/image';
 import Link from 'next/link';
-
+import { easeInOut } from "framer-motion";
 
 const motionProps = {
   initial: { opacity: 0, y: 100, filter: 'blur(30px)' },
   whileInView: { opacity: 1, y: 0, filter: 'blur(0px)' },
-  transition: { ease: ["easeIn", "easeOut"], duration: 0.5 },
+  transition: { ease: easeInOut, duration: 0.5 },
   viewport: { margin: "1000px 0px -200px 0px", once: false },
 }
 
 const motionImageProps = {
   initial: { opacity: 0.7, scale: 0.4 },
   whileInView: { opacity: 1, scale: 1 },
-  transition: { ease: ["easeIn", "easeOut"], duration: 0.5 },
+  transition: { ease: easeInOut, duration: 0.5 },
   viewport: { margin: "1000px 0px -100px 0px", once: false },
 }
 
@@ -403,6 +403,6 @@ export default function Home() {
         <SectionContact id="contact" />
       </main>
       <Footer />
-    </>
-  );
+    </Header >
+      );
 }
