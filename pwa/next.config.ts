@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   output: "standalone",
+  assetPrefix: "./",
 };
 
 export default nextConfig;
