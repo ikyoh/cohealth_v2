@@ -4,11 +4,11 @@ import Header from "@/components/website/Header";
 import HeroSection from "@/components/website/HeroSection";
 import SectionContact from "@/components/website/SectionContact";
 import SectionSoftware from "@/components/website/SectionSofware";
+import { easeInOut } from "framer-motion";
 import { ArrowRight, Cpu, Frame, MessagesSquare, NotepadText } from 'lucide-react';
 import * as motion from "motion/react-client";
 import Image from 'next/image';
 import Link from 'next/link';
-import { easeInOut } from "framer-motion";
 
 const motionProps = {
   initial: { opacity: 0, y: 100, filter: 'blur(30px)' },
@@ -30,7 +30,6 @@ export default function Home() {
       <Header />
       <HeroSection />
       <main className="container mx-auto px-4 py-8">
-
         <section id="patients" className="py-16">
           <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
             <motion.div {...motionProps}>
@@ -66,7 +65,6 @@ export default function Home() {
                       <li>
                         Soutien aux aidants
                       </li>
-
                     </ul>
                     <p className="font-bold mb-1">
                       En 4 étapes :
@@ -106,7 +104,6 @@ export default function Home() {
                       </li>
                     </ul>
                     <p className="text-muted-foreground">Transparence garantie : évaluation claire et devis selon les besoins.</p>
-
                     <Link
                       href="#contact"
                       className="mt-10 bg-primary hover:bg-background dark:hover:border-t-border hover:border-primary group flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950">
@@ -126,9 +123,6 @@ export default function Home() {
                   </div>
                 </div>
               </motion.div>
-
-
-
               <div className="relative mt-6 sm:mt-0 perspective-midrange">
                 <motion.div {...motionImageProps}>
                   <div className="relative mt-6 sm:mt-0 perspective-midrange">
@@ -208,7 +202,6 @@ export default function Home() {
                       Dépendance / précarité
                     </li>
                   </ul>
-
                   <Link
                     href="#contact"
                     className="mt-10 bg-primary hover:bg-background dark:hover:border-t-border hover:border-primary group flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950">
@@ -225,10 +218,8 @@ export default function Home() {
                       </div>
                     </div>
                   </Link>
-
                 </div>
               </motion.div>
-
             </div>
           </div>
         </section>
@@ -276,7 +267,6 @@ export default function Home() {
                       Mandats psychiatriques (infirmier spécialisé)
                     </li>
                   </ul>
-
                   <Link
                     href="#contact"
                     className="mt-10 bg-primary hover:bg-background dark:hover:border-t-border hover:border-primary group flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950">
@@ -310,8 +300,6 @@ export default function Home() {
                   </div>
                 </motion.div>
               </div>
-
-
             </div>
           </div>
         </section>
@@ -374,7 +362,6 @@ export default function Home() {
                       <p className="text-muted-foreground text-sm">Conditions de travail respectueuses.</p>
                     </div>
                   </div>
-
                   <Link
                     href="#contact"
                     className="mt-10 bg-primary hover:bg-background dark:hover:border-t-border hover:border-primary group flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950">
@@ -391,18 +378,15 @@ export default function Home() {
                       </div>
                     </div>
                   </Link>
-
                 </div>
               </motion.div>
             </div>
           </div>
         </section>
-
-
         <SectionSoftware id="software" />
         <SectionContact id="contact" />
       </main>
       <Footer />
-    </Header >
-      );
+    </>
+  );
 }
